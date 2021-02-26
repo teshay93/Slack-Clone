@@ -1,50 +1,70 @@
 import React from "react";
 import styled from "styled-components";
-import InfoIcon from "@material-ui/icons/Info";
-import StarBorderIcon from "@material-ui/icons/StarBorder";
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import ChatInput from './ChatInput';
+// import StarBorderIcon from "@material-ui/icons/StarBorder";
 
 const Chat = () => {
   return (
     <Container>
-      <ChatContainer>
-      <HashTag>
-        # clever
-        <StarBorderIcon />
-       </HashTag>
-        Company-wide announcements and work based matters
-        <Details>
-          Details
-          <InfoIcon />
-        </Details>
-      </ChatContainer>
+      <Header>
+        <Channel>
+          <ChannelName># clever</ChannelName>
+          <ChannelInfo>Company-wide announcements and work-based matters</ChannelInfo>
+        </Channel>
+        <ChannelDetails>
+          <div>
+            Details
+          </div>
+          <Info />
+        </ChannelDetails>
+      </Header>
+      <ChatContainer></ChatContainer>
+      <ChatInput />
     </Container>
   );
 };
 
+//STYLED COMPONENTS
+
 const Container = styled.div`
+  display: grid;
+  grid-template-rows: 64px auto min-content;
+`;
+
+const Header = styled.div`
+padding-left: 20px;
+padding-right: 20px;
+display: flex;
+align-items: center;
+border-bottom: 1px solid rgba(83, 39, 83, .13);
+justify-content: space-between;
+`;
+
+const ChatContainer = styled.div``;
+
+
+const Channel = styled.div``;
+
+const ChannelDetails = styled.div`
   display: flex;
-  width: 100%;
-  height: 100vh;
-  left: 0;
-  position: relative;
-`;
-
-const ChatContainer = styled.div`
   align-items: center;
-  justify-content: space-between;
-  padding-left: 19px;
-  border-bottom: 1px solid #532753;
-  height: 64px;
-  width: 100%;
+  color: #606060;
 `;
 
-const HashTag = styled.div`
+const ChannelName = styled.div`
+font-weight: 700;
 `;
 
-const Details = styled.div`
-  display: flex;
-  align-items: center;
-  padding-right: 16px;
+const ChannelInfo = styled.div`
+font-weight: 400;
+color: #606060;
+font-size: 13px;
+margin-top: 8px;
 `;
+
+const Info = styled(InfoOutlinedIcon)`
+margin-left: 10px;
+`
 
 export default Chat;

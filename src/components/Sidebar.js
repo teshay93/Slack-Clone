@@ -1,11 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
-import { sidebarItems } from '../data/SidebarData';
+import { sidebarItems } from "../data/SidebarData";
 import AddIcon from "@material-ui/icons/Add";
-import { channelItems } from "../data/ChannelsData";
+import db from '../firebase';
 
 const Sidebar = (props) => {
+
+  const addChannel = () => {
+    const promptName = prompt("Enter channel name");
+    if (promptName) {
+      db.collection('rooms').add({
+        name: promptName
+      })
+    }
+  };
+
   return (
     <Container>
       <WorkspaceContainer>
@@ -29,16 +39,12 @@ const Sidebar = (props) => {
       <ChannelsContainer>
         <NewChannelContainer>
           <div>Channels</div>
-          <AddIcon />
+          <AddIcon onClick={addChannel} />
         </NewChannelContainer>
         <ChannelsList>
-        {
-        props.rooms.map(item => (
-          <Channel>
-            # {item.name}
-          </Channel>
-        ))}
-          
+          {props.rooms.map((item) => (
+            <Channel># {item.name}</Channel>
+          ))}
         </ChannelsList>
       </ChannelsContainer>
     </Container>
@@ -76,7 +82,7 @@ const NewMessage = styled.div`
 `;
 
 const MainChannels = styled.div`
-padding-top: 20px;
+  padding-top: 20px;
 `;
 
 const MainChannelItem = styled.div`
@@ -106,19 +112,17 @@ const NewChannelContainer = styled.div`
   padding-right: 12px;
 `;
 
-const ChannelsList = styled.div`
-
-`;
+const ChannelsList = styled.div``;
 
 const Channel = styled.div`
-height: 28px;
-display: flex;
-align-items: center;
-padding-left: 19px;
-cursor: pointer;
-:hover {
-    background: #350D36;
-} 
+  height: 28px;
+  display: flex;
+  align-items: center;
+  padding-left: 19px;
+  cursor: pointer;
+  :hover {
+    background: #350d36;
+  }
 `;
 
 export default Sidebar;
