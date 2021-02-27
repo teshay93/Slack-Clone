@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import ChatInput from './ChatInput';
+import ChatMessage from './ChatMessage';
 // import StarBorderIcon from "@material-ui/icons/StarBorder";
 
 const Chat = () => {
@@ -19,14 +20,15 @@ const Chat = () => {
           <Info />
         </ChannelDetails>
       </Header>
-      <ChatContainer></ChatContainer>
+      <ChatContainer>
+        <ChatMessage />
+      </ChatContainer>
       <ChatInput />
     </Container>
   );
 };
 
 //STYLED COMPONENTS
-
 const Container = styled.div`
   display: grid;
   grid-template-rows: 64px auto min-content;

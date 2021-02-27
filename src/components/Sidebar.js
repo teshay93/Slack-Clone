@@ -110,6 +110,13 @@ const NewChannelContainer = styled.div`
   height: 28px;
   padding-left: 20px;
   padding-right: 12px;
+
+  .MuiSvgIcon-root {
+    cursor: pointer;
+    :hover {
+      color: lightgreen;
+    }
+  }
 `;
 
 const ChannelsList = styled.div``;
@@ -124,5 +131,7 @@ const Channel = styled.div`
     background: #350d36;
   }
 `;
+
+
 
 export default Sidebar;

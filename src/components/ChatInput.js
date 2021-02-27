@@ -7,7 +7,7 @@ const ChatInput = () => {
     <Container>
       <InputContainer>
         <form>
-          <input type="text" placeholder="message here..." />
+          <input type="text" placeholder="Message #general..." />
           <SendButton>
             <Send />
           </SendButton>
@@ -29,7 +29,7 @@ const InputContainer = styled.div`
 
   form {
     display: flex;
-    height: 42px;
+    height: 82px;
     align-items: center;
     padding-left: 10px;
     input {
