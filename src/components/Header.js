@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
+import { checkPropTypes } from "prop-types";
 
-const Header = () => {
+const Header = ({user, signOut}) => {
   return (
     <Container>
       <Main>
@@ -16,15 +17,19 @@ const Header = () => {
         <HelpOutlineIcon />
       </Main>
       <UserContainer>
-        <Name>Ashley</Name>
-        <UserImage>
-          <img src="https://i.imgur.com/6VBx3io.png" />
+        <Name>{user.name}</Name>
+        <UserImage onClick={signOut}>
+          <img
+            src={user.photo ? user.photo : "https://i.imgur.com/6VBx3io.png"}
+          />
         </UserImage>
       </UserContainer>
     </Container>
   );
 };
 
+
+//STYLED COMPONENTS
 const Name = styled.div`
   padding-right: 16px;
 `;
@@ -34,6 +39,7 @@ const UserImage = styled.div`
   height: 28px;
   border: 2px solid white;
   border-radius: 3px;
+  cursor: pointer;
 
   img {
     width: 100%;

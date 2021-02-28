@@ -18,6 +18,7 @@ const ChatMessage = () => {
   );
 };
 
+
 //STYLED COMPONENTS
 const Container = styled.div`
   padding: 8px 20px;

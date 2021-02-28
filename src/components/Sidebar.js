@@ -51,6 +51,8 @@ const Sidebar = (props) => {
   );
 };
 
+
+//STYLED COMPONENTS
 const Container = styled.div`
   background: #3f0e40;
 `;

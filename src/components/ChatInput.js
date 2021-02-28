@@ -17,6 +17,8 @@ const ChatInput = () => {
   );
 };
 
+
+//STYLED COMPONENTS
 const Container = styled.div`
   padding-left: 20px;
   padding-right: 20px;
@@ -57,6 +59,7 @@ const SendButton = styled.div`
   .MuiSvgIcon-root {
     width: 18px;
   }
+
 :hover {
     background: #148567;
 }
