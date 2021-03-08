@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const ChatMessage = () => {
+const ChatMessage = ({text, name, image, timestamp}) => {
   return (
     <Container>
       <UserAvatar>
-        <img src="https://randomuser.me/api/portraits/men/37.jpg" />
+        <img src={image} />
       </UserAvatar>
       <MessageContent>
         <Name>
-          Jake C.
-          <span>2/25/2021 12:31:55 AM</span>
+          {name}
+          <span>3/4/2021 12:32 PM</span>
         </Name>
-        <Text>Challenge going strong!</Text>
+        <Text>{text}</Text>
       </MessageContent>
     </Container>
   );

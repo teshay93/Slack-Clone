@@ -25,7 +25,7 @@ const Login = (props) => {
       <Content>
         <SlackImg src="http://assets.stickpng.com/images/5cb480cd5f1b6d3fbadece79.png" />
         <h1>Sign in Slack</h1>
-        <SignInButton onClick={() => signIn()}>
+        <SignInButton onClick={()=>signIn()}>
           Sign in with Google
         </SignInButton>
       </Content>

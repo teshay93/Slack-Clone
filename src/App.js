@@ -18,9 +18,8 @@ function App() {
     db.collection("rooms").onSnapshot((snapshot) => {
       setRooms(
         snapshot.docs.map((doc) => {
-          return { id: doc.id, name: doc.data().name };
-        })
-      );
+          return { id: doc.id, name: doc.data().name }
+        }))
     });
   };
 
@@ -47,11 +46,11 @@ function App() {
             <Main>
               <Sidebar rooms={rooms} />
               <Switch>
-                <Route path="/room">
-                  <Chat />
+                <Route path="/room/:channelId">
+                  <Chat user={user} />
                 </Route>
                 <Route path="/">
-                  <Login />
+                  Select or Create channel
                 </Route>
               </Switch>
             </Main>
