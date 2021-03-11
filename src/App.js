@@ -65,7 +65,7 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-rows: 35px auto;
+  grid-template-rows: 35px minmax(0, 1fr);
 `;
 
 const Main = styled.div`

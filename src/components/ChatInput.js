@@ -10,6 +10,7 @@ const send = (e) => {
   e.preventDefault();
 if(!input) return;
   sendMessage(input)
+  setInput("")
 }
 
   return (
@@ -18,6 +19,7 @@ if(!input) return;
         <form>
           <input 
           onChange={(e) =>setInput(e.target.value)}
+          value={input}
           type="text" placeholder="Message #general..." />
           <SendButton 
           type="submit"

@@ -86,6 +86,7 @@ const Chat = ({user}) => {
 const Container = styled.div`
   display: grid;
   grid-template-rows: 64px auto min-content;
+  min-height: 0;
 `;
 
 const Header = styled.div`
@@ -97,7 +98,11 @@ const Header = styled.div`
   justify-content: space-between;
 `;
 
-const ChatContainer = styled.div``;
+const ChatContainer = styled.div`
+display: flex;
+flex-direction: column;
+overflow-y: scroll;
+`;
 
 const Channel = styled.div``;
 
